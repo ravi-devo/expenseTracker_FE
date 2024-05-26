@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import ExpenseChart from "../components/expenseChart";
 import Header from "../components/navBar";
 import '../styles/home.css';
+import { toast } from "react-toastify";
 
 const Home = () => {
 
@@ -28,15 +29,14 @@ const Home = () => {
                 const response = await GetAllExpenses(token).unwrap();
                 if (response.message === 'Expense fetched successfully') {
                     dispatch(getAllExpense(response.data));
-                    console.log("Expenses fetched successfully")
                 }
-            } catch (error) {
-                console.log("Error fetcheing expenses responses", error);
+            } catch (err) {
+                toast.error(err?.data?.message || err.error);
             }
         }
 
         getAllExpenses();
-    }, [])
+    }, [dispatch, GetAllExpenses, token])
     return (<>
         <div className="container-height">
             <Header />
