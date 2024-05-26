@@ -6,12 +6,13 @@ import { useLoginMutation } from '../slices/userSlice/userApi';
 import { useDispatch, useSelector } from 'react-redux';
 import { setCredential } from '../slices/userSlice/authReducer';
 import { useNavigate, Link } from 'react-router-dom';
+import Loader from '../components/loader';
 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
-    const [ LoginAPI ] = useLoginMutation();
+    const [ LoginAPI, { isLoading } ] = useLoginMutation();
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const {userInfo} = useSelector((state) => state.auth);
@@ -67,6 +68,7 @@ const Login = () => {
                     Submit
                 </Button>
             </Form>
+            {isLoading && <Loader />}
         </div>
     </>)
 }

@@ -1,0 +1,32 @@
+.container-height{
+    height: 98vh;
+}
+
+.row-height{
+    height: 350px;
+}
+
+.amount-container{
+    background-color: brown;
+    border: 1px solid brown;
+    height: 60px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    color: white;
+}
+
+.left-container{
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 0.5em
+}
+
+.recent-spent{
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 0.5em;
+    margin-top: 0.5em;
+}

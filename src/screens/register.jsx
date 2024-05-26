@@ -6,6 +6,7 @@ import { useRegisterMutation } from "../slices/userSlice/userApi";
 import { useDispatch } from "react-redux";
 import { useNavigate, Link } from "react-router-dom";
 import { setCredential } from "../slices/userSlice/authReducer";
+import Loader from "../components/loader";
 
 const Register = () => {
 
@@ -13,7 +14,7 @@ const Register = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState('');
-    const [RegisterAPI] = useRegisterMutation();
+    const [RegisterAPI, {isLoading}] = useRegisterMutation();
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -69,6 +70,7 @@ const Register = () => {
                 <p>Already registered? <Link to='/'>Login</Link></p>
                 <Button type="submit">Register</Button>
             </Form>
+            {isLoading && <Loader />}
         </div>
     </>)
 }

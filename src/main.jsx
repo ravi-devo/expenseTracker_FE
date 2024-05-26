@@ -10,6 +10,9 @@ import store from './store.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import PrivateRoute from './components/privateRoute.jsx';
 import Home from './screens/home.jsx';
+import AddExpense from './screens/addExpense.jsx';
+import AllExpense from './screens/allExpense.jsx';
+import UpdateExpense from './screens/updateExpense.jsx';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -18,6 +21,9 @@ const router = createBrowserRouter(
       <Route path='/register' index={true} element={<Register />} />
       <Route path='' element={<PrivateRoute />}>
         <Route path='/home' element={<Home />} />
+        <Route path='/addExpense' element={<AddExpense />} />
+        <Route path='/allExpense' element={<AllExpense />} />
+        <Route path='/updateExpense' element={<UpdateExpense />} />
       </Route>
     </Route>
   )
