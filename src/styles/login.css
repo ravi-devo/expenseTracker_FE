@@ -1,0 +1,36 @@
+.login-container{
+    height: 75%;
+    width: 75%;
+    background-color: lightgreen;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid grey;
+    border-radius: 5px;
+}
+
+.page-container{
+    height: 98vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container{
+    height: 50%;
+    width: 40%;
+}
+
+@media (max-width: 767px) {
+    .login-container {
+        height: 90%;
+        width: 90%;
+    }
+
+    .form-container{
+        height: 50%;
+        width: 70%;
+    }
+}

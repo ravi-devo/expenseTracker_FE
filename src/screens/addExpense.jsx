@@ -41,14 +41,15 @@ const AddExpense = () => {
     return (<>
         <div>
             <Header />
+            <p className="title-card my-2">Create New Expense</p>
             <Form onSubmit={addExpenseHandler}>
-                <Form.Group className="my-2">
+                <Form.Group className="my-2 col-lg-6">
                     <Form.Label>
                         Description
                     </Form.Label>
                     <Form.Control type="text" placeholder="Expense Description" value={description} onChange={(e) => setDescription(e.target.value)} />
                 </Form.Group>
-                <Form.Group className="my-2">
+                <Form.Group className="my-2 col-lg-6">
                     <Form.Label>
                         Category
                     </Form.Label>
@@ -62,7 +63,7 @@ const AddExpense = () => {
                         <option value="Others">Others</option>
                     </Form.Select>
                 </Form.Group>
-                <Form.Group className="my-2">
+                <Form.Group className="my-2 col-lg-6">
                     <Form.Label>
                         Amount
                     </Form.Label>

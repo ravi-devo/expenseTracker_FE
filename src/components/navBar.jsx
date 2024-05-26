@@ -1,13 +1,14 @@
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import '../styles/navbar.css';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { logOut } from '../slices/userSlice/authReducer';
 
 
 const Header = () => {
 
   const dispatch = useDispatch();
+  const {expenseItems} = useSelector((state) => state.expense);
 
   const logOutHandler = () => {
     dispatch(logOut());
@@ -26,11 +27,11 @@ const Header = () => {
                     <Nav.Link>Home</Nav.Link>
                 </LinkContainer>
             </Nav>
-            <Nav>
+            {expenseItems.length > 0 && <Nav>
                 <LinkContainer to='/allExpense'>
                     <Nav.Link>All Expense</Nav.Link>
                 </LinkContainer>
-            </Nav>
+            </Nav>}
             <Nav className='ms-auto'>
                 <LinkContainer to='/'>
                     <Nav.Link onClick={logOutHandler}>Log Out</Nav.Link>

@@ -1,0 +1,28 @@
+.register-container{
+    height: 90%;
+    width: 75%;
+    background-color: lightgreen;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid grey;
+    border-radius: 5px;
+}
+
+.registerForm-container{
+    height: 50%;
+    width: 40%;
+}
+
+@media (max-width: 767px) {
+    .register-container {
+        height: 90%;
+        width: 90%;
+    }
+
+    .registerForm-container{
+        height: 50%;
+        width: 70%;
+    }
+}
